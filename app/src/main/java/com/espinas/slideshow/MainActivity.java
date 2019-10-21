@@ -2,7 +2,9 @@ package com.espinas.slideshow;
 
 import android.content.Context;
 import android.os.Handler;
+import android.os.PersistableBundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,51 +12,42 @@ import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
-    Toolbar toolbar;
+    Context context = this;
+    TabLayout tabLayout;
     ViewPager viewPager;
-    SlideShow adapter;
-    int currentPage ;
+    List<Fragment> fragments;
+    String [] titles;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-        toolbar = (Toolbar) findViewById(R.id.toolbar_id);
-        setSupportActionBar(toolbar);
 
-        viewPager = (ViewPager) findViewById(R.id.viewPager_id);
-        adapter = new SlideShow(this);
+        initView();
+        initViewPager();
+    }
 
-        viewPager.setAdapter(adapter);
+    private void initViewPager() {
+        fragments = new ArrayList<>();
+        fragments.add(First_Page.newInstance());
+        fragments.add(Drakht_Fragment.newInstance());
+        fragments.add(Gol_Fragment.newInstance());
+        fragments.add(Khak_Fragment.newInstance());
 
-        TabLayout tabLayout = (TabLayout)findViewById(R.id.tabLayout_id);
+        titles = new String[]{"صفحه اصلی","انواع درختچه","گل های آپارتمانی","انواع خاک"};
+
+        viewPager.setAdapter(new Fragment_adapter(getSupportFragmentManager(),fragments,titles));
         tabLayout.setupWithViewPager(viewPager);
+    }
 
-
-       // Auto start of viewpager
-        final Handler handler = new Handler();
-        final Runnable Update = new Runnable() {
-            public void run() {
-                    if (currentPage == 5) {
-                        currentPage = 0;
-                    }
-                    viewPager.setCurrentItem(currentPage++, true);
-            }
-        };
-        Timer swipeTimer = new Timer();
-        swipeTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                handler.post(Update);
-            }
-        }, 2500, 2500);
-
-
-
+    private void initView() {
+        tabLayout =(TabLayout) findViewById(R.id.tabLayout_id);
+        viewPager = (ViewPager)findViewById(R.id.viewPager_id);
     }
 }
