@@ -1,21 +1,17 @@
 package com.espinas.slideshow;
 
 import android.content.Context;
-import android.os.Handler;
-import android.os.PersistableBundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.widget.ImageView;
-import android.widget.TableLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 public class MainActivity extends AppCompatActivity {
     Context context = this;
@@ -24,12 +20,11 @@ public class MainActivity extends AppCompatActivity {
     List<Fragment> fragments;
     String [] titles;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        initView();
         initViewPager();
     }
 
@@ -42,12 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
         titles = new String[]{"صفحه اصلی","انواع درختچه","گل های آپارتمانی","انواع خاک"};
 
-        viewPager.setAdapter(new Fragment_adapter(getSupportFragmentManager(),fragments,titles));
-        tabLayout.setupWithViewPager(viewPager);
-    }
-
-    private void initView() {
         tabLayout =(TabLayout) findViewById(R.id.tabLayout_id);
         viewPager = (ViewPager)findViewById(R.id.viewPager_id);
+
+        viewPager.setAdapter(new Fragment_adapter(getSupportFragmentManager(),fragments,titles));
+        tabLayout.setupWithViewPager(viewPager);
+
     }
 }
