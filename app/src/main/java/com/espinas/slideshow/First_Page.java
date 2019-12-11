@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class First_Page extends Fragment
+public class  First_Page extends Fragment
 {
     public static First_Page newInstance(){
         Bundle args = new Bundle();

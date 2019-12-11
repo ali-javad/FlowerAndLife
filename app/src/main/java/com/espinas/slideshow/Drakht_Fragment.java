@@ -28,10 +28,7 @@ public class Drakht_Fragment extends Fragment
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
-
-    }
+        }
 
     public static Drakht_Fragment newInstance(){
         Bundle args = new Bundle();
