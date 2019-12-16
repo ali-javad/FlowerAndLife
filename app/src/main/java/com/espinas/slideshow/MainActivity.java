@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +21,22 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     List<Fragment> fragments;
     String [] titles;
+    Toolbar toolbar;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toolbar = findViewById(R.id.toolbar_id);
+        setSupportActionBar(toolbar);
         initViewPager();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
     }
 
     private void initViewPager() {
