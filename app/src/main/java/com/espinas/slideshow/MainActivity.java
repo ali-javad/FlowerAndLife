@@ -1,6 +1,7 @@
 package com.espinas.slideshow;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -82,6 +83,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        return false;
+        switch (menuItem.getItemId())
+        {
+            case R.id.nav_profile: startActivity(new Intent(this,Register_Page.class));
+                return true;
+
+            default: return true;
+
+
+        }
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId())
+        {
+            case R.id.login_id: startActivity(new Intent(this,Login_Page.class));
+            return true;
+
+            default: return true;
+
+
+        }
     }
 }

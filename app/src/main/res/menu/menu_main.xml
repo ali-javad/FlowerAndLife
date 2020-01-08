@@ -18,6 +18,7 @@
         android:title=""
         android:id="@+id/login_id"
         android:icon="@drawable/ic_person"
+
         app:showAsAction="always"/>
 
     <item

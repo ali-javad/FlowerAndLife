@@ -12,4 +12,28 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_nav_drawer">navDrawerActivity</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="txtUsername">نام کاربری</string>
+    <string name="txtPassword">رمز عبور</string>
+    <string name="ch_ForgetPass">رمز عبورم را فراموش کرده ام</string>
+    <string name="txt_NotRegister">ثبت نام نکرده ام</string>
+    <string name="title_activity_register__page">Register_Page</string>
+    <string name="txtTitelRegister">کاربر گرامی لطفا جهت استفاده از خدمات اپلیکیشن ابتدا ثبت نام نمایید</string>
+    <string name="txtName">نام</string>
+    <string name="txtFamily">نام خانوادگی</string>
+    <string name="txtPhoneNumber">شماره تماس</string>
+    <string name="txtAddress">آدرس</string>
+    <string name="txtViewAgree">با پر کردن فرم عضویت با قوانین و مقرارت اپلیکیشن موافق هستم</string>
 </resources>
