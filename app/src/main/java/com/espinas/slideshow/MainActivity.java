@@ -2,6 +2,9 @@ package com.espinas.slideshow;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -13,9 +16,16 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,6 +97,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         {
             case R.id.nav_profile: startActivity(new Intent(this,Register_Page.class));
                 return true;
+            case R.id.nav_share: shareApplication();
+
 
             default: return true;
 
@@ -106,5 +118,53 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         }
+    }
+
+    private void shareApplication(){
+
+        try{
+        PackageManager pm = this.getPackageManager();
+        ApplicationInfo app = pm.getApplicationInfo(this.getPackageName(),0);
+        String filePath = app.publicSourceDir;
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("*/*");
+
+        File apk = new File(filePath);
+
+
+            File tempFile = new File(getExternalCacheDir()+"/ExtractedApk");
+            if(!tempFile.isDirectory())
+            if(!tempFile.mkdirs())
+            return;
+
+
+            tempFile = new File(tempFile.getPath()+"/"+ getString(app.labelRes).replace("","").toLowerCase()+ ".apk");
+            if(!tempFile.exists()) {
+                if (!tempFile.createNewFile()) {
+                    return;
+                }
+            }
+            InputStream in = new FileInputStream(apk);
+            OutputStream out = new FileOutputStream(tempFile);
+
+            byte[] buf = new byte[1024];
+            int len;
+
+            while ((len = in.read(buf))>0){
+                out.write(buf,0,len);
+            }
+            in.close();
+            out.close();
+
+            System.out.println("File copied.");
+            intent.putExtra(Intent.EXTRA_STREAM,Uri.fromFile(tempFile));
+            startActivity(Intent.createChooser(intent,"اشتراک گذاری با"));
+
+        }
+        catch (Exception e){
+            Log.e("shareApp",e.getMessage());
+        }
+
+
     }
 }
