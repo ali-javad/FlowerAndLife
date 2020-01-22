@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Register_Page"
-    android:background="#eeeeee"
+    android:background="#C5E1A5"
     android:layoutDirection="rtl">
 
     <ImageView

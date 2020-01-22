@@ -17,19 +17,20 @@
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="تنظیمات" />
-    </group>
 
-    <item android:title="ارتباط با ما">
-        <menu>
-            <item
+        <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
                 android:title="معرفی برنامه به دوستان" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_aboutUs"
                 android:icon="@drawable/ic_call"
-                android:title="تماس با ما" />
-        </menu>
-    </item>
+                android:title="ارتباط با ما" />
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/ic_exit_to_app"
+            android:title="خروج از برنامه"/>
+
+    </group>
 
 </menu>

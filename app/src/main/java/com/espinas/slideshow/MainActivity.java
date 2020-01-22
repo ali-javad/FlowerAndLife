@@ -1,6 +1,7 @@
 package com.espinas.slideshow;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -9,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -17,10 +19,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,9 +50,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         initViewPager();
 
-//drawer and toggle check
-        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.END)) {
-            drawer.closeDrawer(GravityCompat.END);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
@@ -100,9 +100,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         {
             case R.id.nav_profile: startActivity(new Intent(this,Register_Page.class));
                 return true;
-            //case R.id.nav_share: shareApplication();
-
-
+            case R.id.nav_aboutUs : startActivity(new Intent(this,AboutUsActivity.class));
+                return true;
+            case R.id.nav_exit: exitAppEvent();
+                return true;
             default: return true;
 
 
@@ -123,51 +124,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void shareApplication(){
+    public void exitAppEvent(){
 
-        try{
-        PackageManager pm = this.getPackageManager();
-        ApplicationInfo app = pm.getApplicationInfo(this.getPackageName(),0);
-        String filePath = app.publicSourceDir;
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("*/*");
+        AlertDialog.Builder hoshdar = new AlertDialog.Builder(MainActivity.this);
 
-        File apk = new File(filePath);
+        hoshdar.setTitle("هشدار");
+        hoshdar.setMessage("آیا قصد خروج از برنامه را دارید؟");
 
-
-            File tempFile = new File(getExternalCacheDir()+"/ExtractedApk");
-            if(!tempFile.isDirectory())
-            if(!tempFile.mkdirs())
-            return;
-
-
-            tempFile = new File(tempFile.getPath()+"/"+ getString(app.labelRes).replace("","").toLowerCase()+ ".apk");
-            if(!tempFile.exists()) {
-                if (!tempFile.createNewFile()) {
-                    return;
-                }
+        hoshdar.setPositiveButton("بله", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
             }
-            InputStream in = new FileInputStream(apk);
-            OutputStream out = new FileOutputStream(tempFile);
+        });
 
-            byte[] buf = new byte[1024];
-            int len;
-
-            while ((len = in.read(buf))>0){
-                out.write(buf,0,len);
+        hoshdar.setNegativeButton("خیر", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
             }
-            in.close();
-            out.close();
-
-            System.out.println("File copied.");
-            intent.putExtra(Intent.EXTRA_STREAM,Uri.fromFile(tempFile));
-            startActivity(Intent.createChooser(intent,"اشتراک گذاری با"));
-
-        }
-        catch (Exception e){
-            Log.e("shareApp",e.getMessage());
-        }
-
-
+        });
+        hoshdar.show();
     }
+
+
 }
