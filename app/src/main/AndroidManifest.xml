@@ -25,7 +25,8 @@
         </activity>
         <activity android:name=".Login_Page" />
         <activity android:name=".Register_Page" />
-        <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".AboutUsActivity" />
+        <activity android:name=".Tajrobe_Fragment"></activity>
     </application>
 
 </manifest>
