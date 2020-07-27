@@ -58,10 +58,7 @@ public class Drakht_Fragment extends Fragment
     private void showDrakht()
     {
         itemsDrakht.add(new ModelRecycler(R.drawable.ang1,"برگ انجیری"));
-        itemsDrakht.add(new ModelRecycler(R.drawable.dif1,"دیفن باخیا"));
-        itemsDrakht.add(new ModelRecycler(R.drawable.dor1,"دراسنا"));
-        itemsDrakht.add(new ModelRecycler(R.drawable.fil1,"فلودندرون"));
-        itemsDrakht.add(new ModelRecycler(R.drawable.zam1,"زاموفیلیا"));
+
     }
 
 

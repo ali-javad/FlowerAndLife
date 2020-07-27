@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void initViewPager() {
         fragments = new ArrayList<>();
-        fragments.add(First_Page.newInstance());
+        fragments.add(Starter_Fragment.newInstance());
         fragments.add(Drakht_Fragment.newInstance());
         fragments.add(Gol_Fragment.newInstance());
         fragments.add(Khak_Fragment.newInstance());
@@ -95,34 +95,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    @Override
+  @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId())
         {
-            case R.id.nav_profile: startActivity(new Intent(this,Register_Page.class));
-                return true;
+
             case R.id.nav_aboutUs : startActivity(new Intent(this,AboutUsActivity.class));
                 return true;
             case R.id.nav_exit: exitAppEvent();
                 return true;
             default: return true;
 
-
         }
 
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        switch (menuItem.getItemId())
-        {
-            case R.id.login_id: startActivity(new Intent(this,Login_Page.class));
-            return true;
-
-            default: return true;
-
-
-        }
     }
 
     public void exitAppEvent(){

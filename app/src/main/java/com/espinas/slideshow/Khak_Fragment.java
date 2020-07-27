@@ -54,13 +54,6 @@ public class Khak_Fragment extends Fragment
     }
     private void showKhak(){
         itemKhak.add(new ModelRecycler(R.drawable.khbarg,"خاک برگ"));
-        itemKhak.add(new ModelRecycler(R.drawable.khros,"خاک رس"));
-        itemKhak.add(new ModelRecycler(R.drawable.khak1,"خاک سلیتی"));
-        itemKhak.add(new ModelRecycler(R.drawable.khak2,"خاک هوموس"));
-        itemKhak.add(new ModelRecycler(R.drawable.khak3,"ورمی کمپوست"));
-        itemKhak.add(new ModelRecycler(R.drawable.khak4,"پرلیت"));
-        itemKhak.add(new ModelRecycler(R.drawable.khak5,"پیت ماس"));
-        itemKhak.add(new ModelRecycler(R.drawable.khak6,"کود حیوانی"));
-        itemKhak.add(new ModelRecycler(R.drawable.khak7,"کوکوپیت"));
+
     }
 }
