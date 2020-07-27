@@ -47,7 +47,7 @@ public class Tajrobe_Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
     }
     private void showTajrobe(){
-        itemTajrobe.add(new ModelRecycler(R.drawable.khbarg,"خاک برگ"));
+        itemTajrobe.add(new ModelRecycler(R.drawable.ang1,"تجارب"));
 
     }
 }

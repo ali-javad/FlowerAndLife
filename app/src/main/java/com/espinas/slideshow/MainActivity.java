@@ -80,9 +80,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void initViewPager() {
         fragments = new ArrayList<>();
         fragments.add(Starter_Fragment.newInstance());
-        fragments.add(Drakht_Fragment.newInstance());
-        fragments.add(Gol_Fragment.newInstance());
-        fragments.add(Khak_Fragment.newInstance());
+        fragments.add(Tecnical_Fragment.newInstance());
+        fragments.add(Fandamental_Fragment.newInstance());
+        fragments.add(TabloKhani_Fragment.newInstance());
         fragments.add(Tajrobe_Fragment.newInstance());
 
         titles = new String[]{"گام آغازین بورس","تحلیل تکنیکال","تحلیل بنیادی","تابلو خوانی","تجارب شخصی"};
