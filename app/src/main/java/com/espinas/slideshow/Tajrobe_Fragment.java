@@ -48,6 +48,11 @@ public class Tajrobe_Fragment extends Fragment {
     }
     private void showTajrobe(){
         itemTajrobe.add(new ModelRecycler(R.drawable.ang1,"تجارب"));
+        itemTajrobe.add(new ModelRecycler(R.drawable.ang1,"بهترین زمان خرید و فروش"));
+        itemTajrobe.add(new ModelRecycler(R.drawable.ang1,"فمو یا ترس"));
+        itemTajrobe.add(new ModelRecycler(R.drawable.ang1,"اختلاف پایانی با آخرین معامله"));
+        itemTajrobe.add(new ModelRecycler(R.drawable.ang1,"بهترین روش یادگیری"));
+        itemTajrobe.add(new ModelRecycler(R.drawable.ang1,"سخن پایانی با دوستان"));
 
     }
 }

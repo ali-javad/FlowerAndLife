@@ -56,6 +56,13 @@ public class TabloKhani_Fragment extends Fragment {
 
     private void showtablo() {
         itemstablo.add(new ModelRecycler(R.drawable.ang1, "کاربرد تابلو خوانی چیست؟"));
+        itemstablo.add(new ModelRecycler(R.drawable.ang1, "اعداد و ارقام مهم روی تابلو"));
+        itemstablo.add(new ModelRecycler(R.drawable.ang1, "سهامدار حقیقی و حقوقی"));
+        itemstablo.add(new ModelRecycler(R.drawable.ang1, "فیلتر نویسی"));
+        itemstablo.add(new ModelRecycler(R.drawable.ang1, "کد به کد چیست؟"));
+        itemstablo.add(new ModelRecycler(R.drawable.ang1, "قدرت خریدار و فروشنده"));
+        itemstablo.add(new ModelRecycler(R.drawable.ang1, "سابقه معاملات هر سهم"));
+        itemstablo.add(new ModelRecycler(R.drawable.ang1, "قیمت پایانی و آخرین معامله چیست؟"));
 
     }
 }

@@ -56,6 +56,17 @@ public class Tecnical_Fragment extends Fragment
     private void showTecnical()
     {
         itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"تکنیکال چیست؟"));
+        itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"نمودارهای تعدیل شده و نشده"));
+        itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"پیوت چیست ؟"));
+        itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"پرایس اکشن"));
+        itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"تفاوت اندیکاتور و اسیلاتور"));
+        itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"فیبوناچی"));
+        itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"چنگال اندروز"));
+        itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"امواج الیوت"));
+        itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"انواع الگوهای کلاسیک"));
+        itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"الگوهای هارمونیک"));
+        itemsTecnical.add(new ModelRecycler(R.drawable.ang1,"اندیکاتورها"));
+
 
     }
 }

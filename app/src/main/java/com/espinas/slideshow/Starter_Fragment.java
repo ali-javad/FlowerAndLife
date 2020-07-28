@@ -56,6 +56,11 @@ public class Starter_Fragment extends Fragment {
 
     private void showStarter() {
         itemsstarter.add(new ModelRecycler(R.drawable.ang1, "از کجا شروع کنیم؟"));
+        itemsstarter.add(new ModelRecycler(R.drawable.ang1, "انواع کارگزاری ها"));
+        itemsstarter.add(new ModelRecycler(R.drawable.ang1, "انواع بازارهای مالی"));
+        itemsstarter.add(new ModelRecycler(R.drawable.ang1, "انواع استراتژی ها"));
+        itemsstarter.add(new ModelRecycler(R.drawable.ang1, "انواع روش تحلیل"));
+        itemsstarter.add(new ModelRecycler(R.drawable.ang1, "روش انتخاب سهم"));
 
     }
 }

@@ -57,6 +57,9 @@ public class Fandamental_Fragment extends Fragment {
 
     private void showStarter() {
         itemsFandamental.add(new ModelRecycler(R.drawable.ang1, "فاندامنتال چیست؟"));
+        itemsFandamental.add(new ModelRecycler(R.drawable.ang1, "معرفی P/E و DPS"));
+        itemsFandamental.add(new ModelRecycler(R.drawable.ang1, "صورت های مالی شرکت ها"));
+        itemsFandamental.add(new ModelRecycler(R.drawable.ang1, "ارزش جایگزینی و مارکت سهم"));
 
     }
 }
