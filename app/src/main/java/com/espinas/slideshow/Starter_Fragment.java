@@ -38,7 +38,7 @@ public class Starter_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         starter_view = inflater.inflate(starter, container, false);
-        recyclerStarter = new AdapterRecyclerStarter(itemsstarter);
+        recyclerStarter = new AdapterRecyclerStarter(getContext() , itemsstarter);
         StarterRecycler = (RecyclerView) starter_view.findViewById(R.id.starterRecyclerLayout);
         StarterRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         StarterRecycler.setAdapter(recyclerStarter);

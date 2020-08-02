@@ -39,7 +39,7 @@ public class Tecnical_Fragment extends Fragment
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         tecnical_view = inflater.inflate(tecnical,container,false);
-        recyclerTecnical = new AdapterRecyclerTecnical(itemsTecnical);
+        recyclerTecnical = new AdapterRecyclerTecnical(getContext(),itemsTecnical);
         tecnicalrecycler = (RecyclerView) tecnical_view.findViewById(R.id.tecnicalRecyclerLayout);
         tecnicalrecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         tecnicalrecycler.setAdapter(recyclerTecnical);

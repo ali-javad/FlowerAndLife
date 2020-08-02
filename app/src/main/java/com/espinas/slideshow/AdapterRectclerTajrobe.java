@@ -1,5 +1,7 @@
 package com.espinas.slideshow;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,11 +12,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class AdapterRectclerTajrobe extends RecyclerView.Adapter<AdapterRectclerTajrobe.ViewHolder> {
-
+public class AdapterRectclerTajrobe extends RecyclerView.Adapter<AdapterRectclerTajrobe.ViewHolder> implements InfoTitle{
+    Context context;
     List<ModelRecycler> modelRecyclers;
-    public AdapterRectclerTajrobe(List<ModelRecycler> modelRecyclers){
-
+    public AdapterRectclerTajrobe(Context context,List<ModelRecycler> modelRecyclers){
+        this.context = context;
         this.modelRecyclers = modelRecyclers;
     }
 
@@ -25,9 +27,18 @@ public class AdapterRectclerTajrobe extends RecyclerView.Adapter<AdapterRectcler
 
     @Override
     public void onBindViewHolder(@NonNull AdapterRectclerTajrobe.ViewHolder viewHolder, int i) {
-        ModelRecycler modelRecycler = modelRecyclers.get(i);
+        final ModelRecycler modelRecycler = modelRecyclers.get(i);
         viewHolder.imgShow.setImageResource(modelRecycler.getImg());
         viewHolder.txtInfo.setText(modelRecycler.getName());
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,ShowInformation.class);
+                intent.putExtra(title ,modelRecycler.getName());
+                context.startActivity(intent);
+            }
+        });
 
     }
 

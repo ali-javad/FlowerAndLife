@@ -38,7 +38,7 @@ public class TabloKhani_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         tablo_view = inflater.inflate(tablokhani, container, false);
-        recyclerTablo = new AdapterRecyclerTablo(itemstablo);
+        recyclerTablo = new AdapterRecyclerTablo(getContext(),itemstablo);
         TabloRecycler = (RecyclerView) tablo_view.findViewById(R.id.tabloRecyclerLayout);
         TabloRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         TabloRecycler.setAdapter(recyclerTablo);

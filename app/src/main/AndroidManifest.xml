@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="HardcodedDebugMode">
+        tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AboutUsActivity" />
-        <activity android:name=".Tajrobe_Fragment"></activity>
+        <activity android:name=".ShowInformation"/>
     </application>
 
 </manifest>

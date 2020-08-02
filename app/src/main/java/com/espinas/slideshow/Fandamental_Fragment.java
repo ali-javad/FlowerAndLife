@@ -39,7 +39,7 @@ public class Fandamental_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         fandamental_view = inflater.inflate(fandamental, container, false);
-        recyclerFandamental = new AdapterRecyclerFandamental(itemsFandamental);
+        recyclerFandamental = new AdapterRecyclerFandamental(getContext(),itemsFandamental);
         FandamentalRecycler = (RecyclerView) fandamental_view.findViewById(R.id.fandamentalRecyclerLayout);
         FandamentalRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         FandamentalRecycler.setAdapter(recyclerFandamental);

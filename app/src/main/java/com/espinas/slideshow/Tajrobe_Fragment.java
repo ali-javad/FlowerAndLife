@@ -30,7 +30,7 @@ public class Tajrobe_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         tajrobe_view = inflater.inflate(R.layout.tajrobe,container,false);
-        recyclerTajrobe = new AdapterRectclerTajrobe(itemTajrobe);
+        recyclerTajrobe = new AdapterRectclerTajrobe(getContext(),itemTajrobe);
         tajroberecycler = tajrobe_view.findViewById(R.id.tajrobeRecycler);
         tajroberecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         tajroberecycler.setAdapter(recyclerTajrobe);
