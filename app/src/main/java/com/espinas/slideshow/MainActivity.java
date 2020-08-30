@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragments.add(TabloKhani_Fragment.newInstance());
         fragments.add(Tajrobe_Fragment.newInstance());
 
-        titles = new String[]{"گام آغازین بورس","تحلیل تکنیکال","تحلیل بنیادی","تابلو خوانی","تجارب شخصی"};
+        titles = new String[]{"گام آغازین بورس","تحلیل تکنیکال","تحلیل بنیادی","تابلو خوانی","روانشناسی بازار"};
 
         tabLayout =(TabLayout) findViewById(R.id.tabLayout_id);
         viewPager = (ViewPager)findViewById(R.id.viewPager_id);
