@@ -11,9 +11,12 @@
         android:text="onvan" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtinformation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="16dp"
         android:text="TextView"
         android:textDirection="rtl"/>
 
